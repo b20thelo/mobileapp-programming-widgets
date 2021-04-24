@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         textViewLeft.setVisibility(View.VISIBLE);
+                        textViewRight.setVisibility(View.INVISIBLE);
                     }
                 });
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 textViewRight.setVisibility(View.VISIBLE);
+                textViewLeft.setVisibility(View.INVISIBLE);
             }
         });
     }

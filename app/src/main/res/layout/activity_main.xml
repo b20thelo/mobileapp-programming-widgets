@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:text="You are a winner. Congratulations. You will go far in life!!"
         android:gravity="center_horizontal"
-        android:textColor="#DC143C"
+        android:textColor="#228C22"
         android:textSize="30dp"
         android:visibility="invisible"
         android:layout_marginBottom="60dp"
