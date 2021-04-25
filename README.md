@@ -1,42 +1,82 @@
+RAPPORT ASSIGNMENT 3
 
-# Rapport
+Beskrivning uppgift.
+I denna uppgiften har jag lärt mig att arbeta mera med layout och olika element. Jag valde att använda
+mig av en constranitlayout och positionerade ut mina element genom att använda constraintTop_toTopOf
+och gjorde samma för right/left/bottom. Ville jag att elementet skulle hoppa längst ner på skärmen
+tog jag bort constraintTop osv. Jag kompleterade dessa attribut med margins för att flytta innehåll
+exakt dit jag ville ha det. Målet med uppgiften var att använda sig av en layouttyp och sedan
+positionera 3 olika element men efter lite arbetande så kom jag in i det och resultatet blev mera.
 
-**Skriv din rapport här!**
+Tillvägagångssätt.
+Jag valde constraintlayout då jag tyckte det såg roligast ut. För denna uppgift har jag egentligen
+skapat två appar men skrotade första idén då den var tråkig. Andra idén blev min slutgiltiga och den
+var mer utmanade och lärde mig betydligt mycket mera av programmet och olika attribut.
+Jag la till två bilder och tre texter och positionerade dom med hjälp av diverse attribut. När de
+lätta element var utlagda klurade jag lite på hur jag skulle lösa klickandet för att få fram mina
+budskap beroende på vilken personlighetstyp man är i bilden. Jag snappade under lektionen upp att
+man kunde lägga en transparent knapp som man gav en action så jag lekte med detta och hittade en
+alphainställning som gjorde den genomskinlig. Jag skapade två knappar och gav dom id left_button och
+right_button sedan skapade jag mina två texter i varsin TextView och gav dom id left_text och
+right_text. Sedan bytte jag till MainActivity och deklarerade privata variabler och gav dom namn
+textViewLeft och textViewRight. Sedan i onCreate anropade jag först min vänstra TextView via id och
+sedan min vänstra knapp som jag satte en OnClickListerner på och i knappen en onClick där jag angav
+att textViewLeft skulle visas och textViewRight skulle vara osynligt. Sedan repeterade jag exakt
+samma för min text och knapp för högra delen av bilden.
 
-_Du kan ta bort all text som finns sedan tidigare_.
+Resultatet.
+När man klickar på vänstra delen av bilden så visas en text med ett budskap jag hade för dom som gör
+det, när man klickar på högra sker samma för högre personlighetstypen. Budskapen skrivs inte över
+varandra utan man kan klicka fram och tillbaka hur mycket man vill.
 
-## Följande grundsyn gäller dugga-svar:
+KODSNUTT FRÅN MIN APP.
 
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
+Koden i Main Activity för de båda knapparna.
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
-}
+textViewLeft = findViewById(R.id.left_text);
+Button button = findViewById(R.id.left_button);
+    button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            textViewLeft.setVisibility(View.VISIBLE);
+            textViewRight.setVisibility(View.INVISIBLE);
+        }
+    });
+
+textViewRight = findViewById(R.id.right_text);
+Button button2 = findViewById(R.id.right_button);
+    button2.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            textViewRight.setVisibility(View.VISIBLE);
+            textViewLeft.setVisibility(View.INVISIBLE);
+        }
+    });
 ```
 
-Bilder läggs i samma mapp som markdown-filen.
+Kod från ativity_main.xml för de ena knappen och ena texten.
+```
+<Button
+        android:id="@+id/left_button"
+        android:layout_width="150dp"
+        android:layout_height="320dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginBottom="224dp"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
-![](android.png)
-
-Läs gärna:
-
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+<TextView
+        android:id="@+id/left_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To be a winner you need to RETHINK!!"
+        android:gravity="center_horizontal"
+        android:textColor="#DC143C"
+        android:textSize="30dp"
+        android:visibility="invisible"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+```
