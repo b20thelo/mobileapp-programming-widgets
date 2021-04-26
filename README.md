@@ -80,3 +80,7 @@ Kod från ativity_main.xml för de ena knappen och ena texten.
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 ```
+
+Här är screenshot tagna med Android virtual device.
+![alt text]()
+![alt text]()
