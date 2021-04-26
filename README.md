@@ -83,8 +83,7 @@ Kod från ativity_main.xml för de ena knappen och ena texten.
 
 Här är screenshot tagna med Android virtual device.
 Meddelande när man väljer vänstra bilden (klickar på vänstra knappen)
-![](left_button_and_text.png)
-<img src="left_button_and_text.png" alt="drawing" width="200"/>
+<img src="left_button_and_text.png" alt="drawing" width="400"/>
 
 Meddelande när man väljer högra bilden (klickar på högre knappen)
-![](right_button_and_text.png)
+<img src="right_button_and_text.png" alt="drawing" width="400"/>
