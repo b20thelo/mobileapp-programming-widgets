@@ -82,5 +82,8 @@ Kod från ativity_main.xml för de ena knappen och ena texten.
 ```
 
 Här är screenshot tagna med Android virtual device.
-![alt text]()
-![alt text]()
+Meddelande när man väljer vänstra bilden (klickar på vänstra knappen)
+![](left_button_and_text.png)
+
+Meddelande när man väljer högra bilden (klickar på högre knappen)
+![](right_button_and_text.png)
